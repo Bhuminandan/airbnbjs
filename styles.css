@@ -542,6 +542,10 @@ a:hover {
   color: white;
 }
 
+.big-card-title {
+  margin-bottom: 30px;
+}
+
 .btn {
   padding: 10px 20px;
   border-radius: 20px;
@@ -556,4 +560,24 @@ a:hover {
 
 .btn:active {
   transform: translateY(3px);
+}
+
+@media (max-width: 768px) {
+  .big-card {
+    width: 90vw;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 960px) {
+  .big-card {
+    width: 80vw;
+    height: 50vh;
+  }
+  .discover-card-text {
+    width: 80%;
+    left: 50px;
+    top: 50px;
+    font-size: 25px;
+  }
 }
