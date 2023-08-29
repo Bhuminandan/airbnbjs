@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="mobile-nav">
+        <ul class="ul-list">
+          <li class="li-element">
+            <a href="#" class="nav-anchor">Places to stay</a>
+          </li>
+          <li class="li-element">
+            <a href="#" class="nav-anchor">Experiences</a>
+          </li>
+          <li class="li-element">
+            <a href="#" class="nav-anchor">Online Experiences</a>
+          </li>
+        </ul>
+      </div>
+      <nav id="navbar">
+        <div class="navbar_left">
+          <img src="./assets/icons/Vector.svg" alt="logo" />
+        </div>
+        <div class="navbar_middle">
+          <ul class="ul-list">
+            <li class="li-element">
+              <a href="#" class="nav-anchor">Places to stay</a>
+            </li>
+            <li class="li-element">
+              <a href="#" class="nav-anchor">Experiences</a>
+            </li>
+            <li class="li-element">
+              <a href="#" class="nav-anchor">Online Experiences</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar_right">
+          <div class="become-a-host">Become a Host</div>
+          <div class="global-icon">
+            <img src="./assets/icons/globe.svg" alt="globalIcon" />
+          </div>
+          <div class="account-nav-div">
+            <div class="menu-icon">
+              <img src="./assets/icons/menu.svg" alt="menuIcon" />
+            </div>
+            <div class="acc-icon">
+              <img src="./assets/icons/Icon.svg" alt="accountIcon" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero-section">
+        <div id="search-bar">
+          <div class="location-div search-bar-div">
+            <label for="location">Location</label>
+            <input
+              id="location"
+              type="text"
+              placeholder="Where are you going?"
+            />
+          </div>
+          <div class="checkin-div search-bar-div">
+            <label for="checkin">Check in</label>
+            <input id="checkin" type="date" placeholder="Add dates" />
+          </div>
+          <div class="checkout-div search-bar-div">
+            <label for="checkout">Check out</label>
+            <input id="checkout" type="date" placeholder="Add dates" />
+          </div>
+          <div class="guests-div search-bar-div">
+            <label for="guests">Guests</label>
+            <input id="guests" type="number" placeholder="Add guests" />
+          </div>
+          <div class="search-btn">
+            <img src="./assets/icons/Icon (1).svg" alt="" />
+          </div>
+        </div>
+        <div class="hero-img-div">
+          <div class="hero-img">
+            <img src="./assets/hero img.jpg" alt="hero img" />
+          </div>
+          <div class="hero-text-btn">
+            <p>Not sure where to go? Perfect.</p>
+            <button id="iamflexible">I'm flexible</button>
+          </div>
+        </div>
+      </section>
+      <section class="cards-section">
+        <div class="inspiration-cards">
+          <div class="inspiration-cards-heading">
+            Inspiration for your next trip
+          </div>
+          <div class="inspiration-cards-row">
+            <div class="single-card">
+              <div class="img-div">
+                <img src="./assets/cardimglake.png" alt="Nashville" />
+              </div>
+              <div class="card-text-div firstcard">
+                <p class="card-title">Nashville</p>
+                <p>52 miles away</p>
+              </div>
+            </div>
+            <div class="single-card">
+              <div class="img-div">
+                <img src="./assets/cardimg.png" alt="South Haven" />
+              </div>
+              <div class="card-text-div secondcard">
+                <p class="card-title">South Haven</p>
+                <p>168 miles away</p>
+              </div>
+            </div>
+            <div class="single-card">
+              <div class="img-div">
+                <img src="./assets/cardimg1.png" alt="Stanton" />
+              </div>
+              <div class="card-text-div thirdcard">
+                <p class="card-title">Stanton</p>
+                <p>192 miles away</p>
+              </div>
+            </div>
+            <div class="single-card">
+              <div class="img-div">
+                <img src="./assets/imgcadkk.png" alt="New Buffalo" />
+              </div>
+              <div class="card-text-div fourthcard">
+                <p class="card-title">New Buffalo</p>
+                <p>130 miles away</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="discover-airbnb-cards">
+          <div class="inspiration-cards-heading">
+            Inspiration for your next trip
+          </div>
+          <div class="discover-cards-grid">
+            <div class="big-card">
+              <div class="div-img">
+                <img src="./assets/caves.jpg" alt="caves" />
+              </div>
+              <div class="discover-card-text">
+                <p>Things to do on trip</p>
+                <button class="btn">Experiences</button>
+              </div>
+            </div>
+            <div class="big-card">
+              <div class="div-img">
+                <img src="./assets/videoimg.jpg" alt="caves" />
+              </div>
+              <div class="discover-card-text">
+                <p>Things to do from home</p>
+                <button class="btn">Online Experiences</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- Footer will go here -->
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

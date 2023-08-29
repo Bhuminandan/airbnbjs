@@ -1,0 +1,559 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --airBnb-pink: #de3151;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Header styling start ---------------------
+--------------------------------------------- */
+
+header {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Navbar (Header) styling start ---------------------
+--------------------------------------------- */
+
+.mobile-nav {
+  position: absolute;
+  width: 100vw;
+  height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  display: none;
+  z-index: 99;
+}
+
+.mobile-nav .ul-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 70vh;
+  z-index: 9;
+}
+
+.li-element a {
+  color: white;
+}
+
+#navbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 4vw;
+  background-color: black;
+  color: white;
+}
+
+.navbar_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.navbar_left > img {
+  width: 100px;
+  height: 100px;
+}
+
+.navbar_middle ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.li-element a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--airBnb-pink);
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.become-a-host {
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.become-a-host:hover {
+  color: var(--airBnb-pink);
+}
+.global-icon img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.global-icon img:hover {
+  scale: 1.04;
+}
+
+.account-nav-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 100;
+}
+.menu-icon {
+  transition: all 0.3s ease;
+}
+.menu-icon:hover {
+  scale: 1.05;
+}
+
+.acc-icon {
+  transition: all 0.3s ease;
+}
+.acc-icon:hover {
+  scale: 1.05;
+}
+
+/* Media queries for navbar responsiveness */
+
+@media (max-width: 768px) {
+  .become-a-host {
+    display: none;
+  }
+  .global-icon {
+    display: none;
+  }
+  #navbar {
+    width: 100%;
+    height: 8vh;
+  }
+
+  .navbar_left > img {
+    width: 80px;
+    height: 80px;
+  }
+  .account-nav-div img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 984px) {
+  .navbar_middle {
+    display: none;
+  }
+}
+
+/* Navbar (Header) styling end ---------------------
+--------------------------------------------- */
+
+/* Header styling end ---------------------
+--------------------------------------------- */
+
+/* Hero section styling starts ---------------------
+--------------------------------------------- */
+
+/* Searchbar (Hero section) styling starts ---------------------
+--------------------------------------------- */
+
+.hero-section {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search-bar {
+  width: 55%;
+  height: 8vh;
+  margin-top: 2vh;
+  padding: 30px 10px 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 40px;
+  background-color: white;
+}
+
+.search-bar-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.search-bar-div input {
+  outline: none;
+  border: none;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--airBnb-pink);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.search-btn:hover {
+  background-color: #ea0731; /* using darker shade for hover*/
+}
+
+.search-btn:active {
+  transform: translateY(3px);
+}
+
+.search-btn img {
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 768px) {
+  #search-bar {
+    width: 99%;
+    padding-right: 5px;
+    padding-left: 20px;
+  }
+  .location-div {
+    width: 100px;
+  }
+}
+
+@media (max-width: 824px) {
+  .checkin-div {
+    display: none;
+  }
+  .checkout-div {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  #search-bar {
+    width: 95%;
+  }
+  .guests-div {
+    display: none;
+  }
+  .search-div {
+    display: none;
+  }
+}
+
+@media (max-width: 1300px) {
+  #search-bar {
+    width: 70%;
+  }
+}
+
+/* Searchbar (Hero section) styling end ---------------------
+--------------------------------------------- */
+
+/* Hero img styling starts ---------------------
+--------------------------------------------- */
+.hero-img-div {
+  background-color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4vh;
+}
+
+.hero-img img {
+  width: 94vw;
+  height: 70vh;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.6;
+}
+
+.hero-text-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  color: white;
+}
+
+.hero-text-btn p {
+  text-align: center;
+  padding: 10px;
+  font-size: 45px;
+}
+
+.hero-text-btn button {
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: white;
+  color: #671296;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-text-btn button:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.hero-text-btn button:active {
+  transform: translateY(3px);
+}
+
+@media (max-width: 768px) {
+  .hero-text-btn p {
+    font-size: 20px !important;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .hero-text-btn {
+    bottom: 150px;
+  }
+  .hero-img img {
+    width: 90vw;
+    height: 65vh;
+  }
+  .hero-text-btn button {
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-text-btn p {
+    font-size: 35px;
+  }
+}
+
+/* Hero img styling ends ---------------------
+--------------------------------------------- */
+
+/* Cards section styling starts ---------------------
+--------------------------------------------- */
+
+.cards-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 4vh;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+}
+
+/* Inspiration Cards section styling starts ---------------------
+--------------------------------------------- */
+
+.inspiration-cards {
+  margin-top: 4vh;
+  width: 100%;
+}
+
+.inspiration-cards-heading {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 5vh;
+}
+
+.inspiration-cards-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.single-card {
+  width: 369px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.single-card:hover {
+  scale: 1.02;
+}
+
+.img-div {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-text-div {
+  height: 50%;
+}
+
+.card-text-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3vh;
+  color: white;
+}
+.card-text-div .card-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.firstcard {
+  background-color: #cc2d4a;
+}
+
+.secondcard {
+  background-color: #bc1a6e;
+}
+
+.thirdcard {
+  background-color: #de3151;
+}
+
+.fourthcard {
+  background-color: #d93b30;
+}
+
+@media (max-width: 1024px) {
+  .inspiration-cards-heading {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards-section {
+    margin-top: 5vh;
+  }
+  .inspiration-cards-heading {
+    font-size: 22px;
+  }
+}
+
+/* Inspiration Cards section styling ends ---------------------
+--------------------------------------------- */
+
+/* Discover Cards section styling starts ---------------------
+--------------------------------------------- */
+
+.discover-airbnb-cards {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.discover-cards-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.big-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 47vw;
+  height: 100vh;
+  background-color: black;
+}
+.div-img {
+  width: 100%;
+  height: 100%;
+}
+.div-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.discover-card-text {
+  position: absolute;
+  width: 50%;
+  left: 100px;
+  top: 100px;
+  font-size: 40px;
+  color: white;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.btn:active {
+  transform: translateY(3px);
+}
