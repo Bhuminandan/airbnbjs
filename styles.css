@@ -504,6 +504,8 @@ a:hover {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
 }
 
 .discover-cards-grid {
@@ -579,5 +581,336 @@ a:hover {
     left: 50px;
     top: 50px;
     font-size: 25px;
+  }
+}
+
+/* Discover Cards section styling ends ---------------------
+--------------------------------------------- */
+
+/* gift Cards section styling starts ---------------------
+--------------------------------------------- */
+
+.gift-cards-section {
+  width: 100%;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+  padding-inline: 4vh;
+}
+
+.gift-card-heading {
+  width: 80%;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.gift-card-btn button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.gift-card-btn button:hover {
+  background-color: black;
+  scale: 1.04;
+}
+
+.gift-cards-right img {
+  width: 980px;
+  height: 320px;
+}
+
+@media (max-width: 768px) {
+  .gift-cards-right img {
+    width: 300px !important;
+    height: 100px !important;
+  }
+  .gift-card-heading {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1070px) {
+  .gift-cards-right img {
+    width: 600px;
+    height: 180px;
+  }
+  .gift-card-heading {
+    font-size: 30px;
+  }
+}
+
+/* gift Cards styling ends ---------------------
+--------------------------------------------- */
+
+/* Cards section styling ends ---------------------
+--------------------------------------------- */
+
+/* Question-banner section styling Starts ---------------------
+--------------------------------------------- */
+
+.question-banner {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8vh;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-inline: 3.2vw;
+}
+
+.banner-img-div {
+  width: 100%;
+  height: 100%;
+}
+.banner-img-div img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+
+.banner-text-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  top: 30vh;
+  left: 10vw;
+  height: 50%;
+}
+
+.banner-heading {
+  width: 70%;
+  color: white;
+  font-size: 70px;
+}
+
+.superhost-banner-btn {
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+  .banner-heading {
+    font-size: 28px !important;
+  }
+  .question-banner {
+    height: 60vh;
+  }
+  .banner-text-div {
+    top: 10vh;
+    left: 7vw;
+    height: 35%;
+  }
+  .banner-img-div img {
+    object-position: 50% 40% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner-heading {
+    font-size: 40px;
+  }
+}
+
+/* Question-banner section styling ends ---------------------
+--------------------------------------------- */
+
+/* Getways-banner section styling Starts ---------------------
+--------------------------------------------- */
+
+.getways-section {
+  width: 100vw;
+  min-height: 80vh;
+  margin-top: -1vh;
+  margin-bottom: -1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-inline: 5vh;
+}
+
+.getways-heading {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.getways-row {
+  padding-top: 2vh;
+  padding-bottom: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.gateway-row-item {
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.active-gateway-tab {
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.gateway-items-grid {
+  height: 50%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gateway-column {
+  width: 320px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gateway-grid-item {
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  cursor: pointer;
+}
+
+.gateway-city {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.gateway-country {
+  color: #6b7280;
+}
+
+/* Getways-banner section styling Ends ---------------------
+--------------------------------------------- */
+
+/* Footer styling Starts ---------------------
+--------------------------------------------- */
+
+#footer {
+  background-color: #f9fafb;
+  width: 100vw;
+  min-height: 50vh;
+  padding: 8vh 4vh;
+}
+
+.footer-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6vw;
+}
+
+.footer-col-heading {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.footer-ul {
+  list-style: none;
+}
+.footer-li-item {
+  margin-top: 3vh;
+  margin-bottom: 4vh;
+}
+.footer-li-item a {
+  text-decoration: none;
+  color: #4b5563;
+}
+
+.hrline {
+  width: 100%;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  background-color: #d0d6de;
+  height: 2px;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #4b5563;
+  gap: 10px;
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #4b5563;
+  gap: 20px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.imp-links {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom-left {
+    margin-bottom: 4vh;
   }
 }
