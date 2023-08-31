@@ -216,7 +216,6 @@ header {
   position: fixed;
   background-color: white;
   z-index: 9;
-  border: 1px solid red;
   top: 12vh;
   margin-bottom: 2vh;
   margin-left: -1vh;
@@ -268,7 +267,8 @@ header {
   }
 
   .filters-row {
-    margin-top: 0vh;
+    position: sticky;
+    margin-top: -9vh;
     height: 8vh;
   }
 }
