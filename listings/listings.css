@@ -216,8 +216,9 @@ header {
   position: fixed;
   background-color: white;
   z-index: 9;
-  padding-top: 10vh;
-  padding-bottom: 2vh;
+  border: 1px solid red;
+  top: 12vh;
+  margin-bottom: 2vh;
   margin-left: -1vh;
   overflow-x: auto;
 }
@@ -426,7 +427,7 @@ header {
   justify-content: center;
   position: fixed;
   bottom: 10vh;
-  left: 40vw;
+  left: 35%;
 }
 
 .show-map-btn button {
