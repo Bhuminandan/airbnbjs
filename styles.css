@@ -63,7 +63,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 4vw;
+  padding-inline: 8vw;
   background-color: black;
   color: white;
 }
@@ -303,8 +303,8 @@ a:hover {
 }
 
 .hero-img img {
-  width: 94vw;
-  height: 70vh;
+  width: 85vw;
+  height: 75vh;
   object-fit: cover;
   border-radius: 8px;
   opacity: 0.6;
@@ -383,7 +383,7 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-inline: 4vh;
+  padding-inline: 10vh;
   margin-bottom: 3vh;
   margin-top: 3vh;
 }
@@ -400,6 +400,7 @@ a:hover {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 5vh;
+  padding-left: 5vh;
 }
 
 .inspiration-cards-row {
@@ -411,7 +412,7 @@ a:hover {
 }
 
 .single-card {
-  width: 369px;
+  width: 329px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -476,6 +477,9 @@ a:hover {
 }
 
 @media (max-width: 1024px) {
+  .cards-section {
+    padding-inline: 2vh !important;
+  }
   .inspiration-cards-heading {
     font-size: 20px !important;
   }
@@ -520,7 +524,7 @@ a:hover {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  width: 47vw;
+  width: 43vw;
   height: 100vh;
   background-color: black;
 }
@@ -566,7 +570,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .big-card {
-    width: 90vw;
+    width: 94vw !important;
     height: 70vh;
   }
 }
@@ -621,7 +625,7 @@ a:hover {
 }
 
 .gift-cards-right img {
-  width: 980px;
+  width: 840px;
   height: 320px;
 }
 
@@ -670,13 +674,16 @@ a:hover {
 }
 
 .banner-img-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
 .banner-img-div img {
   border-radius: 8px;
-  width: 100%;
-  height: 100%;
+  width: 94%;
+  height: 80%;
   object-fit: cover;
   object-position: 50% 60%;
 }
@@ -741,7 +748,7 @@ a:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding-inline: 5vh;
+  padding-inline: 14vh;
 }
 
 .getways-heading {
@@ -809,6 +816,12 @@ a:hover {
   color: #6b7280;
 }
 
+@media (max-width: 768px) {
+  .getways-section {
+    padding-inline: 4vh;
+  }
+}
+
 /* Getways-banner section styling Ends ---------------------
 --------------------------------------------- */
 
@@ -819,7 +832,7 @@ a:hover {
   background-color: #f9fafb;
   width: 100vw;
   min-height: 50vh;
-  padding: 8vh 4vh;
+  padding: 8vh 14vh;
 }
 
 .footer-top {
@@ -910,6 +923,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  #footer {
+    padding: 8vh 4vh;
+  }
   .footer-bottom-left {
     margin-bottom: 4vh;
   }
