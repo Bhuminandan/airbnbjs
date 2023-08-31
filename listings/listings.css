@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --airBnb-pink: #de3151;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Header styling start ---------------------
+--------------------------------------------- */
+
+header {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+/* Navbar (Header) styling start ---------------------
+--------------------------------------------- */
+
+.mobile-nav {
+  position: absolute;
+  width: 100vw;
+  height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  display: none;
+  z-index: 99;
+}
+
+.mobile-nav .ul-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 70vh;
+  z-index: 9;
+}
+
+.li-element a {
+  color: white;
+}
+
+.navbar {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10vh;
+  gap: 10px;
+}
+
+.left-nav img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.middle-nav .search-bar {
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 6px 0px rgba(31, 41, 55, 0.1),
+    0px 2px 4px 0px rgba(31, 41, 55, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.searchbar-item {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.search-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--airBnb-pink);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-div:hover {
+  scale: 1.03;
+}
+
+.search-div:active {
+  transform: translateY(1px);
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.become-a-host {
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.become-a-host:hover {
+  color: var(--airBnb-pink);
+}
+.global-icon img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.global-icon img:hover {
+  scale: 1.04;
+}
+
+.account-nav-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px solid var(--gray-200, #e5e7eb);
+  cursor: pointer;
+  z-index: 100;
+}
+.menu-icon {
+  transition: all 0.3s ease;
+}
+.menu-icon:hover {
+  scale: 1.05;
+}
+
+.acc-icon {
+  transition: all 0.3s ease;
+}
+.acc-icon:hover {
+  scale: 1.05;
+}
+
+@media (max-width: 768px) {
+  .searchbar-item {
+    display: none;
+  }
+  .navbar {
+    padding-inline: 2vh !important;
+  }
+  .search-div {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 930px) {
+  .become-a-host {
+    display: none;
+  }
+  .global-icon {
+    display: none;
+  }
+  .navbar {
+    padding-inline: 8vh;
+  }
+}
+
+/* Navbar (Header) styling Ends ---------------------
+--------------------------------------------- */
+
+/* Main section styling starts ---------------------
+--------------------------------------------- */
+
+.main {
+  padding-inline: 10vh;
+}
+
+/* Filter row styling starts ---------------------
+--------------------------------------------- */
+
+.filters-row {
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  position: sticky;
+  background-color: white;
+  z-index: 9;
+  overflow-x: auto;
+}
+
+.filters-row::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 100px;
+  border: 1px solid #e5e7eb;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.filterImage-div {
+  padding-top: 2px;
+}
+
+.filter-type:hover {
+  border: 1px solid #bcbfc4;
+  background-color: #fafbff;
+}
+
+.filter-type:active {
+  transform: translateY(2px);
+}
+
+.filter-text {
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-inline: 2vh !important;
+  }
+
+  .filters-row {
+    margin-top: 0vh;
+    height: 8vh;
+  }
+}
+
+@media (max-width: 930px) {
+  .main {
+    padding-inline: 8vh;
+  }
+}
+
+/* Filter row styling ends ---------------------
+--------------------------------------------- */
+
+/* Listings styling starts ---------------------
+--------------------------------------------- */
+
+.mainDiv {
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.left-listings {
+  width: 70vw;
+}
+
+.listings-num-heading {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.left-listings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.cards-container {
+  width: 90vh;
+}
+
+.single-card {
+  padding: 30px 0px;
+  width: 50vw;
+  height: 300px;
+  /* border-bottom: 1px solid #cfd9e9; */
+  border-top: 1px solid #dde2e8;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.single-card:hover {
+  scale: 1.01;
+}
+
+.single-card-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-card-left img {
+  object-fit: cover;
+  width: 390px;
+  height: 240px;
+  border-radius: 10px;
+}
+
+.single-card-right {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-left {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.right-map {
+  width: 45vw;
+  height: 100vh;
+  position: sticky;
+  top: 10vh;
+}
+
+.sm-hr-line {
+  width: 60px;
+  height: 1px;
+  background-color: #dee3ed;
+}
+
+.left-top .type-of-place {
+  font-size: 14px;
+  color: #374151;
+}
+
+.left-top .name-of-place {
+  font-size: 20px;
+  color: #374151;
+}
+
+.left-middle .place-info {
+  font-size: 14px;
+  color: #374151;
+}
+
+.left-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.text-right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.right-top img:hover {
+  scale: 1.05;
+}
+
+.right-bottom {
+  white-space: nowrap;
+}
+.show-map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  bottom: 10vh;
+}
+
+.show-map-btn button {
+  background-color: black;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: none;
+}
+
+.show-map-btn button:active {
+  transform: translateY(2px);
+}
+
+@media (max-width: 600px) {
+  .single-card {
+    flex-direction: column;
+    width: 90vw !important;
+    height: 600px;
+  }
+
+  .single-card-left img {
+    width: 320px !important;
+    height: 240px !important;
+  }
+
+  .single-card-right {
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .text-left {
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    padding: 10px;
+  }
+  .text-right {
+    width: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1230px) {
+  .single-card {
+    width: 95vw;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+  .right-map {
+    display: none;
+  }
+  .show-map-btn button {
+    display: block;
+  }
+}
+
+@media (max-width: 1400px) {
+  .single-card-left img {
+    width: 310px;
+    height: 240px;
+    margin-top: 30px !important;
+  }
+}
