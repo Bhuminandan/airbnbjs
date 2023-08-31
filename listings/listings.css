@@ -25,8 +25,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  position: sticky;
-  top: 0;
+  position: fixed;
   background-color: white;
   z-index: 10;
 }
@@ -209,14 +208,17 @@ header {
 --------------------------------------------- */
 
 .filters-row {
-  padding: 10px 0px;
+  width: 99vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  position: sticky;
+  position: fixed;
   background-color: white;
   z-index: 9;
+  padding-top: 10vh;
+  padding-bottom: 2vh;
+  margin-left: -1vh;
   overflow-x: auto;
 }
 
@@ -294,6 +296,7 @@ header {
 }
 
 .left-listings {
+  margin-top: 20vh;
   width: 70vw;
 }
 
@@ -364,10 +367,13 @@ header {
 }
 
 .right-map {
-  width: 45vw;
+  width: 60vw;
   height: 100vh;
-  position: sticky;
-  top: 10vh;
+  overflow: hidden;
+  position: fixed;
+  top: 22vh;
+  right: -20vw;
+  border-radius: 10px;
 }
 
 .sm-hr-line {
@@ -418,8 +424,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: sticky;
+  position: fixed;
   bottom: 10vh;
+  left: 40vw;
 }
 
 .show-map-btn button {
@@ -443,7 +450,20 @@ header {
     width: 90vw !important;
     height: 600px;
   }
+  .left-listings {
+    margin-top: 20vh;
+  }
 
+  .right-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .map iframe {
+    width: 100%;
+    height: 100vh;
+  }
   .single-card-left img {
     width: 320px !important;
     height: 240px !important;
@@ -476,14 +496,26 @@ header {
     margin-bottom: 30px !important;
   }
   .right-map {
+    width: 90vw;
     display: none;
+  }
+  .map iframe {
+    width: 100%;
+    height: 80vh;
   }
   .show-map-btn button {
     display: block;
   }
+  .cards-container {
+    width: 100vw;
+  }
 }
 
 @media (max-width: 1400px) {
+  .right-map {
+    overflow-y: auto;
+    right: 4vw;
+  }
   .single-card-left img {
     width: 310px;
     height: 240px;
