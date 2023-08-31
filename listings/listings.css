@@ -449,6 +449,9 @@ header {
 }
 
 @media (max-width: 600px) {
+  .mainDiv {
+    margin-top: -8vh !important;
+  }
   .single-card {
     flex-direction: column;
     width: 90vw !important;
