@@ -169,6 +169,9 @@ header {
 }
 
 @media (max-width: 768px) {
+  header {
+    position: sticky;
+  }
   .searchbar-item {
     display: none;
   }
