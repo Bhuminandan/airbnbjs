@@ -9,7 +9,6 @@ const navDateEle = document.querySelector(".dates");
 const numOfGuestsEle = document.querySelector(".numofguests");
 const listingsNumHeading = document.querySelector(".listings-num-heading");
 
-
 // Getting the data from Local storage
 
 let searchedlocation = localStorage.getItem("location");
@@ -40,11 +39,17 @@ function updateNavbar() {
         if (checkoutDate > 30) {
             checkInDate = 1;
         }
+        localStorage.setItem("checkInDates", JSON.stringify(new Date().toLocaleDateString()));
+        localStorage.setItem("checkOutDates", JSON.stringify(new Date().toLocaleDateString()));
+    } else {
+        localStorage.setItem("checkInDates", JSON.stringify(checkInDate));
+        localStorage.setItem("checkOutDates", JSON.stringify(checkoutDate));
     }
     if (numOfGuests == '') {
         numOfGuests = 1;
     }
 
+    localStorage.setItem("numOfGuests", JSON.stringify(numOfGuests));
     navLocationEle.textContent = searchedlocation;
     navDateEle.textContent = checkInDate + "-" + checkoutDate;
     numOfGuestsEle.textContent = numOfGuests + " " + "Guests";
@@ -4305,7 +4310,7 @@ function createListingCard(hotelData) {
                         </div>
                         <div class="sm-hr-line"></div>
                         <div class="left-bottom">
-                            <div class="star-ratings">${hotelData.rating}</div>
+                            <div class="star-ratings">${hotelData.rating ? hotelData.rating : "0"}</div>
                             <div class="star">
                             <img src="../assets/icons/star.svg" alt="star icon" />
                             </div>
@@ -4329,6 +4334,12 @@ function createListingCard(hotelData) {
         span.classList.add("more-info");
         span.textContent = singleAnemmiti + " · ";
         placeInfo.appendChild(span);
+    })
+
+    listingCard.addEventListener("click", function () {
+        let hotelDataStringObj = JSON.stringify(hotelData);
+        localStorage.setItem("hotelData", hotelDataStringObj);
+        window.location.href = "../detailsPage/hotelDetails.html";
     })
 
     return listingCard;
@@ -4359,7 +4370,7 @@ function updateUi(resultObj) {
             return;
         }
         let endMessage = document.createElement("div");
-        endMessage.innerHTML = ` <p style="text-align: center; color: #374151;">End! Happy findings</p>`
+        endMessage.innerHTML = ` <p style="text-align: center; color: #374151;">You've Reached End! Happy findings</p>`
         cardsContainer.appendChild(endMessage);
         bottomReachedMessageCount++;
     }
