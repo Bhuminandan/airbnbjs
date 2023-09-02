@@ -215,7 +215,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 10px;
   position: fixed;
   background-color: white;
   z-index: 9;

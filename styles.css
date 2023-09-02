@@ -560,12 +560,21 @@ a:hover {
   transition: all 0.3s ease;
 }
 
+.btn a {
+  text-decoration: none;
+  color: black;
+}
+
 .btn:hover {
   background-color: rgb(218, 218, 218);
 }
 
 .btn:active {
   transform: translateY(3px);
+}
+
+.learn-more-btn a {
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -768,6 +777,10 @@ a:hover {
   white-space: nowrap;
   overflow-x: auto;
   gap: 20px;
+}
+
+.getways-row::-webkit-scrollbar {
+  display: none;
 }
 
 .gateway-row-item {
