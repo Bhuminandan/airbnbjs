@@ -16,26 +16,14 @@ let checkInDate = JSON.parse(localStorage.getItem("checkInDates"));
 let checkoutDate = JSON.parse(localStorage.getItem("checkOutDates"));
 let numOfGuests = JSON.parse(localStorage.getItem("numOfGuests"));
 
+
+
 let userLocation;
 
-// window.onload = () => {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(position => {
-//             userLocation = {
-//                 lat: position.coords.latitude,
-//                 lng: position.coords.longitude
-//             };
-//         });
-//         const listingLocation = `${hotelData.lat},${hotelData.lng}`;
-//         fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${userLocation.lat},${userLocation.lng}&destinations=${listingLocation}&key=AIzaSyCgR97byU3rfXJ3p4ZmUWWGSTO0OBme4d8`)
-//             .then(response => response.json())
-//             .then(data => {
-//                 const distance = data.rows[0].elements[0].distance.text;
-//             })
-//     }
 
-// }
 
+
+let arrayOfHotelLatLng = [];
 
 // Util Functions
 
@@ -73,11 +61,20 @@ function updateNavbar() {
     navLocationEle.textContent = searchedlocation;
     navDateEle.textContent = checkInDate + "-" + checkoutDate
     numOfGuestsEle.textContent = numOfGuests + " " + "Guests";
-    // fetchData(searchedlocation);
+    fetchData(searchedlocation);
 }
 
 
-updateNavbar()
+function updateNavbar() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+        });
+    }
+}
 
 
 // Global Variables
@@ -99,6 +96,9 @@ accountMenuButton.addEventListener("click", () => {
     isMobNavOpen = true;
 });
 
+
+
+
 // Map Show Hide Functionality for smaller devices
 showMapBtn.addEventListener("click", () => {
     if (isMapOpen) {
@@ -112,6 +112,7 @@ showMapBtn.addEventListener("click", () => {
     cardsContainer.style.display = "none";
     isMapOpen = true;
 });
+
 
 
 // Data fetcher function
@@ -129,6 +130,7 @@ async function fetchData(searchInput) {
         const response = await fetch(url, options);
         const result = await response.json();
         updateUi(result);
+
     } catch (error) {
         alert("Something went wrong, Redirecting you to home page");
         console.error(error);
@@ -4353,31 +4355,50 @@ function createListingCard(hotelData) {
         span.classList.add("more-info");
         span.textContent = singleAnemmiti + " · ";
         placeInfo.appendChild(span);
-    })
+    });
 
     listingCard.addEventListener("click", function () {
         let hotelDataStringObj = JSON.stringify(hotelData);
         localStorage.setItem("hotelData", hotelDataStringObj);
         window.location.href = "../detailsPage/hotelDetails.html";
-    })
-    new google.maps.Marker({
-        position: { lat: hotelData.lat, lng: hotelData.lng },
-        map,
-        title: hotelData.title
     });
 
+
+    setTimeout(() => {
+        new google.maps.Marker({
+            map,
+            position: { lat: hotelData.lat, lng: hotelData.lng },
+        });
+    }, 100);
+
+    arrayOfHotelLatLng.push([hotelData.lat, hotelData.lng]);
     return listingCard;
 }
-
-
 
 // Ui Updation function 
 let numOfCards = 0;
 let bottomReachedMessageCount = 0;
-updateUi(obj);
+let mapCreatedCount = 0;
+
 function updateUi(resultObj) {
     let hotelsArr = resultObj.results;
     listingsNumHeading.textContent = hotelsArr.length + "+" + " stays in " + searchedlocation;
+
+    if (mapCreatedCount <= 0) {
+        (function (resultObj) {
+            let latitude = resultObj.results[0].lat;
+            let longitude = resultObj.results[0].lng;
+            let newobj = {
+                lat: latitude,
+                lng: longitude
+            }
+            initMap(newobj);
+        })(resultObj);
+        mapCreatedCount++;
+    }
+
+
+
     if (numOfCards < hotelsArr.length - 1) {
         let currentNumOfCards = numOfCards;
         for (let i = numOfCards; i < currentNumOfCards + 5; i++) {
@@ -4398,45 +4419,13 @@ function updateUi(resultObj) {
         cardsContainer.appendChild(endMessage);
         bottomReachedMessageCount++;
     }
+
 }
 
 // Checking if the user is reached to bottom for pagination
 document.addEventListener('scroll', () => {
     const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
-
     if (window.scrollY >= scrollableHeight) {
         updateUi(obj);
     }
 });
-
-
-
-
-
-
-// function createListingCard(listing) {
-//     // After creating the listingCard
-
-//     // Create a marker for this listing on the map
-//     new google.maps.Marker({
-//         position: { lat: listing.latitude, lng: listing.longitude },
-//         map,
-//         title: listing.title
-//     });
-
-//     return listingCard;
-// }
-
-
-// let userLocation;
-
-// window.onload = () => {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(position => {
-//             userLocation = {
-//                 lat: position.coords.latitude,
-//                 lng: position.coords.longitude
-//             };
-//         });
-//     }
-// }

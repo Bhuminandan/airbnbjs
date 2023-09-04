@@ -226,12 +226,6 @@ function appendDetails(hotelDetails) {
 // Update the host details
 
 function updateHostDetails(hotelDetails) {
-    //     const hostAvatarDiv = document.querySelector(".host-details-row1 #owner-avtar");
-    // const hostSuperHostBadge = document.querySelector(".super-host-badge-avatar");
-    // const hotedBy = document.querySelector(".hosted-by");
-    // const hostReviewsCount = document.querySelector(".row2-info-reviews");
-    // const superHostInfo = document.querySelector(".superhost-row2-info");
-    // const superHostEle = document.querySelector(".host-details-middle");
 
     hostAvatarDiv.src = `${hotelDetails.hostThumbnail}`;
     if (hotelDetails.isSuperhost == false) {
