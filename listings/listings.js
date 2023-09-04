@@ -16,15 +16,6 @@ let checkInDate = JSON.parse(localStorage.getItem("checkInDates"));
 let checkoutDate = JSON.parse(localStorage.getItem("checkOutDates"));
 let numOfGuests = JSON.parse(localStorage.getItem("numOfGuests"));
 
-
-
-let userLocation;
-
-
-
-
-let arrayOfHotelLatLng = [];
-
 // Util Functions
 
 // Redirect user to home page
@@ -63,19 +54,7 @@ function updateNavbar() {
     numOfGuestsEle.textContent = numOfGuests + " " + "Guests";
     fetchData(searchedlocation);
 }
-
-
-function updateNavbar() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            userLocation = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-        });
-    }
-}
-
+updateNavbar();
 
 // Global Variables
 
@@ -4371,7 +4350,6 @@ function createListingCard(hotelData) {
         });
     }, 100);
 
-    arrayOfHotelLatLng.push([hotelData.lat, hotelData.lng]);
     return listingCard;
 }
 
