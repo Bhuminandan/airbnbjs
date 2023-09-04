@@ -62,10 +62,10 @@ function setLocalStorageValues(location, checkIn, checkOut, Guests) {
         return;
     }
 
-    localStorage.setItem("location", location);
-    localStorage.setItem("checkInDates", checkIn);
-    localStorage.setItem("checkOutDates", checkOut);
-    localStorage.setItem("numOfGuests", Guests);
+    localStorage.setItem("location", JSON.stringify(location));
+    localStorage.setItem("checkInDates", JSON.stringify(checkIn));
+    localStorage.setItem("checkOutDates", JSON.stringify(checkOut));
+    localStorage.setItem("numOfGuests", JSON.stringify(Guests));
     redirectUserToListings();
 }
 

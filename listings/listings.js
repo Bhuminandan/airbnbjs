@@ -11,10 +11,30 @@ const listingsNumHeading = document.querySelector(".listings-num-heading");
 
 // Getting the data from Local storage
 
-let searchedlocation = localStorage.getItem("location");
-let checkInDate = localStorage.getItem("checkInDates");
-let checkoutDate = localStorage.getItem("checkOutDates");
-let numOfGuests = localStorage.getItem("numOfGuests");
+let searchedlocation = JSON.parse(localStorage.getItem("location"));
+let checkInDate = JSON.parse(localStorage.getItem("checkInDates"));
+let checkoutDate = JSON.parse(localStorage.getItem("checkOutDates"));
+let numOfGuests = JSON.parse(localStorage.getItem("numOfGuests"));
+
+let userLocation;
+
+// window.onload = () => {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(position => {
+//             userLocation = {
+//                 lat: position.coords.latitude,
+//                 lng: position.coords.longitude
+//             };
+//         });
+//         const listingLocation = `${hotelData.lat},${hotelData.lng}`;
+//         fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${userLocation.lat},${userLocation.lng}&destinations=${listingLocation}&key=AIzaSyCgR97byU3rfXJ3p4ZmUWWGSTO0OBme4d8`)
+//             .then(response => response.json())
+//             .then(data => {
+//                 const distance = data.rows[0].elements[0].distance.text;
+//             })
+//     }
+
+// }
 
 
 // Util Functions
@@ -39,11 +59,11 @@ function updateNavbar() {
         if (checkoutDate > 30) {
             checkInDate = 1;
         }
-        localStorage.setItem("checkInDates", JSON.stringify(new Date().toLocaleDateString()));
-        localStorage.setItem("checkOutDates", JSON.stringify(new Date().toLocaleDateString()));
+        localStorage.setItem("checkInDates", JSON.stringify(new Date().toLocaleDateString()).trim());
+        localStorage.setItem("checkOutDates", JSON.stringify(new Date().toLocaleDateString()).trim());
     } else {
-        localStorage.setItem("checkInDates", JSON.stringify(checkInDate));
-        localStorage.setItem("checkOutDates", JSON.stringify(checkoutDate));
+        localStorage.setItem("checkInDates", JSON.stringify(checkInDate.trim()));
+        localStorage.setItem("checkOutDates", JSON.stringify(checkoutDate.trim()));
     }
     if (numOfGuests == '') {
         numOfGuests = 1;
@@ -51,14 +71,13 @@ function updateNavbar() {
 
     localStorage.setItem("numOfGuests", JSON.stringify(numOfGuests));
     navLocationEle.textContent = searchedlocation;
-    navDateEle.textContent = checkInDate + "-" + checkoutDate;
+    navDateEle.textContent = checkInDate + "-" + checkoutDate
     numOfGuestsEle.textContent = numOfGuests + " " + "Guests";
     // fetchData(searchedlocation);
 }
 
-updateNavbar();
 
-
+updateNavbar()
 
 
 // Global Variables
@@ -4284,10 +4303,10 @@ let obj = {
 
 
 
+
+
 function createListingCard(hotelData) {
 
-
-    // Geting essential data in single variables
     let amenitiesArr = hotelData.previewAmenities;
 
     const listingCard = document.createElement("div");
@@ -4341,6 +4360,11 @@ function createListingCard(hotelData) {
         localStorage.setItem("hotelData", hotelDataStringObj);
         window.location.href = "../detailsPage/hotelDetails.html";
     })
+    new google.maps.Marker({
+        position: { lat: hotelData.lat, lng: hotelData.lng },
+        map,
+        title: hotelData.title
+    });
 
     return listingCard;
 }
@@ -4383,6 +4407,36 @@ document.addEventListener('scroll', () => {
     if (window.scrollY >= scrollableHeight) {
         updateUi(obj);
     }
-})
+});
 
 
+
+
+
+
+// function createListingCard(listing) {
+//     // After creating the listingCard
+
+//     // Create a marker for this listing on the map
+//     new google.maps.Marker({
+//         position: { lat: listing.latitude, lng: listing.longitude },
+//         map,
+//         title: listing.title
+//     });
+
+//     return listingCard;
+// }
+
+
+// let userLocation;
+
+// window.onload = () => {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(position => {
+//             userLocation = {
+//                 lat: position.coords.latitude,
+//                 lng: position.coords.longitude
+//             };
+//         });
+//     }
+// }
