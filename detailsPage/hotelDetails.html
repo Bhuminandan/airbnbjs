@@ -911,6 +911,23 @@
         </div>
       </div>
     </footer>
+    <script>
+      let map;
+
+      async function initMap(obj = { lat: -34.397, lng: 150.644 }) {
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary(
+          "marker"
+        );
+        map = new Map(document.getElementById("map"), {
+          center: obj,
+          zoom: 10,
+          mapId: "4504f8b37365c3d0",
+          animation: google.maps.Animation.BOUNCE,
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgR97byU3rfXJ3p4ZmUWWGSTO0OBme4d8&callback=initMap"></script>
     <script src="./hotelDetails.js"></script>
   </body>
 </html>
