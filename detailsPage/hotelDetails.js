@@ -187,12 +187,19 @@ function handleImage(imageEleArr, clickedImgLink, clikedImgIndex) {
 
 let latitude = hotelDetailsObj.lat;
 let longitude = hotelDetailsObj.lng;
-            let newobj = {
-                lat: latitude,
-                lng: longitude
-            }
+let newobj = {
+    lat: latitude,
+    lng: longitude
+}
 initMap(newobj);
 
+
+setTimeout(() => {
+    new google.maps.Marker({
+        map,
+        position: { lat: hotelDetailsObj.lat, lng: hotelDetailsObj.lng },
+    });
+}, 100);
 
 // Calender js
 

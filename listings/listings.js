@@ -16,6 +16,8 @@ let checkInDate = JSON.parse(localStorage.getItem("checkInDates"));
 let checkoutDate = JSON.parse(localStorage.getItem("checkOutDates"));
 let numOfGuests = JSON.parse(localStorage.getItem("numOfGuests"));
 
+let obj;
+
 // Util Functions
 
 // Redirect user to home page
@@ -109,7 +111,7 @@ async function fetchData(searchInput) {
         const response = await fetch(url, options);
         const result = await response.json();
         updateUi(result);
-
+        obj = result;
     } catch (error) {
         alert("Something went wrong, Redirecting you to home page");
         console.error(error);

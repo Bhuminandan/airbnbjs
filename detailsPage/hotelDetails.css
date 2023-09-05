@@ -1240,7 +1240,7 @@ header {
   margin-bottom: 5vh;
 }
 
-.hotel-map iframe {
+.hotel-map #map {
   margin-top: 4vh;
   border-radius: 10px;
   width: 100%;
